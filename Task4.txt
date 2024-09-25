@@ -5,12 +5,12 @@ public class Task4 {
         System.out.println(nums[i]);
     }
     String[] fruits = {"Apples", "Banana", "Orange", "Grapes"};
-    for(int i = 0; i<fruits.length; i++){
-        System.out.println(fruits[i]);
+    for(int j = 0; j<fruits.length; j++){
+        System.out.println(fruits[j]);
     }
     
     String[] movies = {"The Batman", "Forsaken", "The Godfather", "Star Wars"};
-    for(int i = 0; i<movies.length; i++){
-        System.out.println(movies[i]);
+    for(int k = 0; k<movies.length; k++){
+        System.out.println(movies[k]);
     }
 }
