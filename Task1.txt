@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Task1 {
+    String job;
+    String choice;
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("What is the first initial of your name?: ");
+    char initial = scanner.nextChar();
+    System.out.println("What is your surname?: ");
+    String name = scanner.nextLine();
+
+    System.out.println("How old are you?: ");
+    int age = scanner.nextInt();
+
+    System.out.println("How much do you make a year?: £");
+    int salary = scanner.nextInt();
+
+    System.out.println("Are you currently employed?: ");
+    System.out.println("Yes or No?: ");
+    choice = scanner.nextLine();
+
+    if((choice=="Yes") || (choice =="yes")){
+        job = "employed";
+    } if else ((choice=="No") || (choice=="no")){
+        job = "unemployed";
+    } else {
+        System.out.println("Invalid answer");
+    }
+
+    System.out.println(initial + " " + name + "is " + age + "years old, is currently " + job + "and has a salary of £" + salary + "per year");
+}
