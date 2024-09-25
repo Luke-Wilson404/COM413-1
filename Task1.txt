@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Task1 {
     String job;
-    String choice;
+    Boolean choice;
     Scanner scanner = new Scanner(System.in);
     System.out.println("What is the first initial of your name?: ");
     char initial = scanner.nextChar();
@@ -17,11 +17,11 @@ public class Task1 {
 
     System.out.println("Are you currently employed?: ");
     System.out.println("Yes or No?: ");
-    choice = scanner.nextLine();
+    choice = scanner.nextBoolean();
 
-    if((choice=="Yes") || (choice =="yes")){
+    if(choice == True){
         job = "employed";
-    } if else ((choice=="No") || (choice=="no")){
+    } if else (Boolean == False){
         job = "unemployed";
     } else {
         System.out.println("Invalid answer");
