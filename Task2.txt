@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Task2 {
+
+    Scanner scanner1 = new Scanner();
+
+    System.out.println("Enter your first number: ")
+    int A = scanner1.nextInt();
+    System.out.println("Enter your second number: ")
+    int B = scanner1.nextInt();
+
+    int sum = A + B;
+    int dif = A - B;
+    int  pro = A * B;
+    double quo = A % B;
+
+    System.out.println("Sum: "+sum);
+    System.out.println("Difference: "+dif);
+    System.out.println("Product: "+pro);
+    System.out.println("Quotient: "+quo);
+}
