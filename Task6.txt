@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Task6 {
+
+    Scanner sc6 = new Scanner(System.in);
+    System.out.println("Please enter your name: ")
+    String name = sc6.nextLine();
+
+    int length = name.length();
+    String upper = name.toUpperCase();
+    String lower = name.toLowerCase();
+    Boolean con = name.contains('@');
+    String rev = "";
+    char ch;
+
+    for(int i = 0;i<name.length(); i++){
+        ch = name.charAt(i);
+        rev = ch+rev;
+    }
+
+    System.out.println("Hello, " + name);
+    System.out.println("Length: " + length);
+    System.out.println("Uppercase: " + upper);
+    System.out.println("Lowercase " + lower);
+    System.out.println("Reverse " + rev);
+    System.out.println("Contains '@': " + con);
+}
