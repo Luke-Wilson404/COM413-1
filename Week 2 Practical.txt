@@ -1,0 +1,245 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Week2 {
+	
+	static void Task1() {
+	    Scanner sc1 = new Scanner(System.in);
+	    System.out.println("Enter start and end: ");
+	    int start = sc1.nextInt();
+	    int end = sc1.nextInt();
+	    int sum = 0;
+	
+	    for(int i =0; i <= end; i+=2){
+	        System.out.println(i);
+	        sum += i;
+	    }
+	    System.out.println("Total: " + sum);
+	}
+	
+	void Task2() {
+	    Scanner sc2 = new Scanner(System.in);
+	    System.out.println("Enter a number: ");
+	    int prime = sc2.nextInt();
+	    boolean isPrime = true;
+	
+	    for(int i = 2; i < prime; i++){
+	        if (prime % i == 0) {
+	            isPrime = false;
+	            break;
+	        }
+	    }
+	    if (isPrime) {
+	        System.out.println(prime + " is a prime number");
+	    } else {
+	        System.out.println(prime + " is not a prime number");
+	    }
+	}
+	
+	void Task3(){
+	    Scanner sc3 = new Scanner(System.in);
+	    System.out.println("How many numbers are in your array?:");
+	    int size = sc3.nextInt();
+	    int[] array = new int[size];  
+	    System.out.println("Enter the elements of the array: ");  
+	    for(int i=0; i<size; i++)  
+	    {   
+	    	array[i]=sc3.nextInt();  
+	    }  
+	    System.out.println("There are "+ size + " numbers in array: ");
+	    System.out.println(Arrays.toString(array));
+	}
+	
+	void Task4(){
+	    Scanner sc4 = new Scanner(System.in);
+	    System.out.println("What do you want to do?");
+	    System.out.println("1 - Convert Celsius to Fahrenheit");
+	    System.out.println("2 - Convert Fahrenheit to Celsius");
+	    int ans = sc4.nextInt();
+	    System.out.println("Enter the temperature: ");
+	    int temp = sc4.nextInt();
+	    int c;
+	    int f;
+	    if (ans == 1){
+	        c = temp;
+	        f = ((c*9/5)+32);
+	        System.out.println("The temperature is " + f + " Fahrenheit");
+	    } else if (ans == 2) {
+	        f = temp;
+	        c = ((f-32)*5/9);
+	        System.out.println("The temperature is " + c + " Celsius");
+	    } else {
+	        System.out.println("Invalid answers");
+	    }
+	}
+	
+	void Task5(){
+	    Scanner sc5 = new Scanner(System.in);
+	    System.out.println("Enter a word: ");
+	    String word = sc5.nextLine();
+	    String str = word.toLowerCase();
+	    String rev = "";
+	
+	    for(int i = str.length() - 1; i >= 0; i--){
+	        rev = rev + str.charAt(i);
+	    }
+	    if(str.equals(rev)){
+	        System.out.println(word + " is a palindrome");
+	    } else {
+	        System.out.println(word + " is not a palindrome");
+	    }
+	}
+	
+	void Task6(){
+	    float diam;
+	    double rad;
+	    double vol;
+	
+	    Scanner sc6 = new Scanner(System.in);
+	    System.out.println("Enter a diameter of a sphere: ");
+	    diam = sc6.nextFloat();
+	    rad = (diam / 2.0);
+	    vol = (4.0 / 3.0) * Math.PI * Math.pow(rad, 3);
+	    System.out.println("The volume of the sphere is " + vol);
+	}
+	
+	void Task7() {
+	    Scanner sc7 = new Scanner(System.in);
+	    System.out.println("What shape would you like to print: ");
+	    System.out.println("1 - Square");
+	    System.out.println("2 - Right Angle Triangle");
+	    System.out.println("3 - Equilateral Triangle");
+	    int ans = sc7.nextInt();
+	    int n = 5;
+	    int rows = 7;
+	
+	    if (ans == 1) {
+	        for (int r = 1; r <= 3; r++){
+	            for (int c = 1; c <= 5; c++){
+	                System.out.print("*");
+	            }
+	            System.out.println();
+	        }
+	    } else if (ans == 2) {
+	        for (int i = 1; i < n; i++) {
+	            for (int j = 1; j <= 1; j++) {
+	                System.out.println("*");
+	            }
+	            System.out.println();
+	        }
+	    } else if (ans == 3) {
+	        for (int i = 1; i <= rows; i++){
+	            for (int j = rows; j >= i; j--) {
+	                System.out.println(" ");
+	            }
+	            for (int j = 1; j <= i; j++){
+	                System.out.println("*");
+	            }
+	            System.out.println();
+	        }
+	    } else {
+	        System.out.println("Invalid Answer");
+	    }
+	}
+
+	static void Task8(){
+	    Scanner sc8 = new Scanner(System.in);
+	    System.out.println("Enter a number: ");
+	    int input = sc8.nextInt();
+	    String s = " ";
+	    while (input >= 1000) {
+	        s += "M";
+	        input -= 1000;        }
+	    while (input >= 900) {
+	        s += "CM";
+	        input -= 900;
+	    }
+	    while (input >= 500) {
+	        s += "D";
+	        input -= 500;
+	    }
+	    while (input >= 400) {
+	        s += "CD";
+	        input -= 400;
+	    }
+	    while (input >= 100) {
+	        s += "C";
+	        input -= 100;
+	    }
+	    while (input >= 90) {
+	        s += "XC";
+	        input -= 90;
+	    }
+    	while (input >= 50) {
+        	s += "L";
+        	input -= 50;
+    	}
+    	while (input >= 40) {
+        	s += "XL";
+        	input -= 40;
+    	}
+    	while (input >= 10) {
+        	s += "X";
+        	input -= 10;
+    	}
+    	while (input >= 9) {
+        	s += "IX";
+        	input -= 9;
+    	}
+    	while (input >= 5) {
+        	s += "V";
+        	input -= 5;
+    	}
+    	while (input >= 4) {
+        	s += "IV";
+        	input -= 4;
+    	}
+    	while (input >= 1) {
+        	s += "I";
+        	input -= 1;
+    	}
+    	System.out.println(s);
+	}
+
+	static void Task9(){
+    	Scanner sc9 = new Scanner(System.in);
+    	System.out.println("Enter a word: ");
+    	String str = sc9.nextLine();
+    	String letter = str.substring(0,1).toLowerCase();
+    	String str2 = str.substring(1);
+
+    	if (letter.equals("a")){
+        	System.out.println(str+"ay");
+    	} else if (letter.equals("e")){
+        	System.out.println(str+"ay");
+    	} else if (letter.equals("i")){
+        	System.out.println(str+"ay");
+    	} else if (letter.equals("o")){
+        	System.out.println(str+"ay");
+    	}else if (letter.equals("u")){
+        	System.out.println(str+"ay");
+    	} else {
+        	System.out.println(str2+letter+"ay");
+    	}
+	}
+
+	static void Task10(){
+    	Scanner sc10 = new Scanner(System.in);
+    	System.out.println("Enter a Hexadecimal number: ");
+    	String hex = sc10.next();
+    	int len = hex.length();
+    	int base =1;
+    	int decimal = 0;
+    	for(int i = len - 1; i >= 0; i--) {
+    		if(hex.charAt(1) >= '0' && hex.charAt(i) <='9') {
+    			decimal += (hex.charAt(i) - 48) * base;
+    			base *= 16;
+    		}
+    		else if(hex.charAt(i) >= 'A' && hex.charAt(i) <='F') {
+    			decimal += (hex.charAt(i) - 55) * base;
+    			base *= 16;
+    		}
+    	}
+    	System.out.println(decimal);
+	}
+}
